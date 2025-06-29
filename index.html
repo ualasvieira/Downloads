@@ -3,13 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pagina de Downloads</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 700px; /* Aumentado um pouco para acomodar o hash */
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .download-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px; /* Espaço abaixo do botão */
+        }
+        .download-button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        .download-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .note {
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: #888;
+        }
+        .hash-info {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 0.85em;
+            color: #495057;
+            word-break: break-all; /* Para quebrar o hash em linhas se for muito longo */
+        }
+        .hash-info strong {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 
     <main>
 
         <div>
+            <h1>passo a passo como instalar o nosso aplicativo no video abaixo...</h1>
             <video controls poster="/caminho/para/sua/imagem-de-capa.jpg" class="video-player">
                 <source src="/caminho/para/seu/video.mp4" type="video/mp4">
                 <source src="/caminho/para/seu/video.webm" type="video/webm">
@@ -32,47 +104,41 @@
                     <img src="/caminho/para/icone-android.png" alt="Ícone Android" class="download-icon">
                     Baixar APK Agora
                 </a>
-            <p class="download-note">Tamanho do arquivo: XX MB. Compatível com Android 5.0 ou superior.</p>
+            <p class="download-note">Tamanho do arquivo: 25 MB. Compatível com Android 5.0 ou superior.</p>
+        </div>
+  <div class="hash-info">
+            <strong>Para sua segurança, verifique a integridade do arquivo:</strong><br>
+            SHA256: <code id="apk-sha256">aba110a02a37f254340b11dc5a51d230314648cd27164f3e81f49fc97017603c</code>
+            <button onclick="copyToClipboard('apk-sha256')" style="margin-left: 10px; padding: 5px 10px; cursor: pointer;">Copiar</button>
         </div>
 
-                    <style>
-                        .download-section {
-                            text-align: center;
-                            padding: 40px 20px;
-                            background-color: #f9f9f9;
-                            border-radius: 8px;
-                            margin-top: 40px;
-                        }
-                        .download-section h2 {
-                            color: #333;
-                            margin-bottom: 25px;
-                        }
-                        .download-button {
-                            display: inline-flex; /* Para alinhar ícone e texto */
-                            align-items: center;
-                            gap: 10px; /* Espaçamento entre ícone e texto */
-                            background-color: #4CAF50; /* Um verde atraente */
-                            color: white;
-                            padding: 15px 30px;
-                            text-decoration: none;
-                            border-radius: 5px;
-                            font-weight: bold;
-                            font-size: 1.1em;
-                            transition: background-color 0.3s ease;
-                        }
-                        .download-button:hover {
-                            background-color: #45a049;
-                        }
-                        .download-icon {
-                            width: 28px;
-                            height: 28px;
-                        }
-                        .download-note {
-                            margin-top: 20px;
-                            font-size: 0.9em;
-                            color: #666;
-                        }
-                    </style>
+        <p class="note">
+            Tamanho do arquivo: Aproximadamente 25 MB.<br>
+            Compatível com Android 5.0 (Lollipop) ou superior.<br>
+            <strong>Importante:</strong> Você pode precisar habilitar "Fontes Desconhecidas" nas configurações de segurança do seu telefone para instalar aplicativos baixados fora da Google Play Store, siga o passo a passo do video.
+        </p>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const textToCopy = element.textContent;
+
+            // Cria uma área de texto temporária
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+
+            // Seleciona o texto e copia
+            textArea.select();
+            document.execCommand("copy");
+
+            // Remove a área de texto temporária
+            document.body.removeChild(textArea);
+
+            alert("Hash SHA256 copiado para a área de transferência!");
+        }
+    </script>
     </main>
   
 </body>
