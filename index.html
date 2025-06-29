@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+
+        <div>
+            <video controls poster="/caminho/para/sua/imagem-de-capa.jpg" class="video-player">
+                <source src="/caminho/para/seu/video.mp4" type="video/mp4">
+                <source src="/caminho/para/seu/video.webm" type="video/webm">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+
+                <style>
+                   .video-player {
+                        width: 100%;
+                        max-width: 800px; /* Ou o tamanho desejado */
+                        height: auto;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                </style>
+        </div>
+        <div class="download-section">
+                <h2>Baixe Nosso Aplicativo Android</h2>
+                <a href="/caminho/para/seu/aplicativo.apk" download="nome-do-seu-aplicativo.apk" class="download-button">
+                    <img src="/caminho/para/icone-android.png" alt="Ícone Android" class="download-icon">
+                    Baixar APK Agora
+                </a>
+            <p class="download-note">Tamanho do arquivo: XX MB. Compatível com Android 5.0 ou superior.</p>
+        </div>
+
+                    <style>
+                        .download-section {
+                            text-align: center;
+                            padding: 40px 20px;
+                            background-color: #f9f9f9;
+                            border-radius: 8px;
+                            margin-top: 40px;
+                        }
+                        .download-section h2 {
+                            color: #333;
+                            margin-bottom: 25px;
+                        }
+                        .download-button {
+                            display: inline-flex; /* Para alinhar ícone e texto */
+                            align-items: center;
+                            gap: 10px; /* Espaçamento entre ícone e texto */
+                            background-color: #4CAF50; /* Um verde atraente */
+                            color: white;
+                            padding: 15px 30px;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            font-weight: bold;
+                            font-size: 1.1em;
+                            transition: background-color 0.3s ease;
+                        }
+                        .download-button:hover {
+                            background-color: #45a049;
+                        }
+                        .download-icon {
+                            width: 28px;
+                            height: 28px;
+                        }
+                        .download-note {
+                            margin-top: 20px;
+                            font-size: 0.9em;
+                            color: #666;
+                        }
+                    </style>
+    </main>
+  
+</body>
+</html>
